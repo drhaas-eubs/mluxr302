@@ -1,624 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>MLUXR302 Unit 1 — Introduction to Sustainability in Fashion & Luxury</title>
-  <style>
-  :root {
-    --teal: #00B894;
-    --teal-dark: #00695C;
-    --eubs-bg: #f8f9fa;
-    --text: #1a1a2e;
-    --muted: #6c757d;
-    --white: #ffffff;
-    --radius: 12px;
-    --shadow: 0 2px 12px rgba(0,0,0,0.08);
-    --shadow-hover: 0 6px 24px rgba(0,0,0,0.14);
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--eubs-bg);
-    color: var(--text);
-    line-height: 1.6;
-    min-height: 100vh;
-  }
-  a { color: inherit; text-decoration: none; }
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>MLUXR302 Unit 1 — Introduction to Sustainability in Fashion & Luxury</title>
+<style>
+:root{--teal:#00B894;--teal-d:#00695C;--bg:#f7f8fa;--text:#0f172a;--muted:#64748b;--white:#ffffff;--radius:12px;--shadow:0 1px 6px rgba(0,0,0,0.07);--shadow-lg:0 8px 28px rgba(0,0,0,0.13);}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+a{color:inherit;text-decoration:none;}
+.container{max-width:1120px;margin:0 auto;padding:0 24px;}
+.topbar{background:#0f172a;color:rgba(255,255,255,0.5);font-size:11px;letter-spacing:.1em;text-align:center;padding:7px 0;}
+.topbar strong{color:var(--teal);}
+.site-header{background:var(--white);border-bottom:3px solid var(--teal);padding:16px 0;position:sticky;top:0;z-index:500;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+.hdr-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.hdr-brand .code{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);font-weight:700;}
+.hdr-brand .name{font-size:16px;font-weight:700;}
+.hdr-meta{font-size:12px;color:var(--muted);text-align:right;line-height:1.5;}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--teal-d);font-size:13px;font-weight:600;padding:10px 0;transition:gap .2s;}
+.back-link:hover{gap:10px;}
+.hero{padding:48px 0 36px;text-align:center;}
+.unit-pill{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:16px;}
+.hero h1{font-size:clamp(20px,4vw,36px);font-weight:800;margin-bottom:8px;line-height:1.2;}
+.hero .sub{font-size:15px;color:var(--muted);margin-bottom:6px;}
+.hero-hint{font-size:12px;color:var(--muted);margin-bottom:28px;font-style:italic;}
+.hero-stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;}
+.hero-stat .num{font-size:38px;font-weight:800;line-height:1;}
+.hero-stat .lbl{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-top:2px;}
+.itten-tag{display:inline-flex;align-items:center;gap:7px;font-size:12px;background:var(--white);padding:6px 14px;border-radius:20px;box-shadow:var(--shadow);margin-bottom:32px;}
+.itten-dot{width:10px;height:10px;border-radius:50%;}
+.set-section{margin-bottom:52px;}
+.set-hdr{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid #e2e8f0;}
+.set-hdr h2{font-size:14px;font-weight:700;display:flex;align-items:center;gap:10px;}
+.set-num{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0;}
+.set-tag{font-size:11px;color:var(--muted);background:#f1f5f9;padding:2px 10px;border-radius:10px;margin-left:auto;}
+.fw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:14px;}
+.fw-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);cursor:pointer;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;border-top:4px solid transparent;}
+.fw-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);}
+.fw-card-icon{padding:14px 16px 6px;line-height:1;}
+.fw-card-icon svg{display:block;width:56px;height:40px;}
+.fw-card-body{padding:0 16px 12px;flex:1;display:flex;flex-direction:column;}
+.fw-card-name{font-size:13px;font-weight:700;margin-bottom:5px;color:var(--text);line-height:1.3;}
+.fw-card-desc{font-size:11.5px;color:var(--muted);line-height:1.55;flex:1;}
+.fw-card-foot{display:flex;align-items:center;justify-content:space-between;padding:8px 16px 10px;border-top:1px solid #f0f0f0;margin-top:auto;}
+.fw-sl-badge{font-size:10px;font-weight:700;letter-spacing:.06em;padding:2px 8px;border-radius:8px;}
+.fw-arrow{font-size:13px;color:var(--muted);}
+.idx-hero{padding:60px 0 48px;text-align:center;}
+.idx-hero .school{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:10px;}
+.idx-hero h1{font-size:clamp(26px,5vw,50px);font-weight:800;line-height:1.15;margin-bottom:12px;}
+.idx-hero .tag{font-size:16px;color:var(--muted);margin-bottom:10px;}
+.idx-hero .itten-credit{font-size:12px;color:var(--muted);margin-bottom:30px;font-style:italic;}
+.idx-stats{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;}
+.idx-stat .num{font-size:48px;font-weight:800;color:var(--teal);line-height:1;}
+.idx-stat .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-top:4px;}
+.itten-legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:24px 0 32px;}
+.itten-chip{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;background:var(--white);box-shadow:var(--shadow);}
+.itten-chip-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.accordion{margin-bottom:10px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+.acc-hdr{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;transition:opacity .18s;}
+.acc-hdr:hover{opacity:.93;}
+.acc-meta{display:flex;flex-direction:column;gap:2px;}
+.acc-unit-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,.75);}
+.acc-itten{font-size:10px;color:rgba(255,255,255,.55);font-style:italic;}
+.acc-title{font-size:15px;font-weight:700;color:#fff;line-height:1.3;}
+.acc-chevron{font-size:17px;color:rgba(255,255,255,.65);transition:transform .28s;}
+.acc-hdr.open .acc-chevron{transform:rotate(180deg);}
+.acc-body{display:none;background:var(--white);}
+.acc-body.open{display:block;}
+.res-link{display:flex;align-items:center;gap:12px;padding:13px 22px;border-bottom:1px solid #f1f5f9;transition:background .13s;}
+.res-link:last-child{border-bottom:none;}
+.res-link:hover{background:#f8fafc;}
+.res-badge{font-size:10px;font-weight:700;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;}
+.res-title{font-size:14px;font-weight:700;margin-bottom:1px;}
+.res-meta{font-size:11px;color:var(--muted);}
+.res-tag{font-size:10px;color:var(--muted);background:#f1f5f9;padding:2px 8px;border-radius:6px;white-space:nowrap;}
+.phase-list{list-style:none;}
+.phase-item{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid #f0f0f0;}
+.phase-item:last-child{border-bottom:none;}
+.phase-badge{font-size:10px;font-weight:700;letter-spacing:.07em;padding:4px 10px;border-radius:8px;height:fit-content;white-space:nowrap;}
+.phase-h{font-size:14px;font-weight:700;margin-bottom:4px;}
+.phase-p{font-size:13px;color:var(--muted);}
+.case-brand-hdr{padding:48px 0 28px;text-align:center;}
+.brand-name{font-size:48px;font-weight:900;letter-spacing:-2px;margin-bottom:8px;line-height:1;}
+.case-card{background:var(--white);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);margin-bottom:18px;}
+.case-card h2{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #f1f5f9;}
+.case-card p{font-size:14.5px;line-height:1.8;margin-bottom:10px;}
+.case-card ol{padding-left:18px;}
+.case-card li{font-size:14.5px;line-height:1.7;margin-bottom:8px;}
+.pr-card{background:var(--white);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);margin-bottom:18px;}
+.pr-card h2{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:12px;}
+.pr-card p{font-size:14.5px;line-height:1.8;margin-bottom:10px;}
+.kp-item{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start;}
+.kp-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:7px;}
+.kp-text{font-size:14px;line-height:1.6;}
+.pr-prepare{border-radius:0 var(--radius) var(--radius) 0;padding:20px 24px;border-left:4px solid;margin-bottom:48px;}
+.pr-prepare-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;}
+.ref-cards{display:grid;gap:18px;}
+.ref-card{background:var(--white);border-radius:var(--radius);padding:26px 28px;box-shadow:var(--shadow);display:flex;gap:18px;align-items:flex-start;}
+.ref-num{font-size:32px;font-weight:900;line-height:1;opacity:.15;flex-shrink:0;width:40px;}
+.ref-card p{font-size:15px;line-height:1.75;}
+.ref-guide{border-radius:var(--radius);padding:20px 24px;margin-top:24px;margin-bottom:48px;}
+.ref-guide-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;}
+.ref-guide p{font-size:13.5px;line-height:1.7;}
+.cg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:9px;}
+.cg-card{background:var(--white);border-radius:8px;padding:12px 14px;box-shadow:0 1px 3px rgba(0,0,0,0.05);border-left:4px solid transparent;}
+.cg-name{font-size:12px;font-weight:700;margin-bottom:2px;}
+.cg-unit{font-size:10px;color:var(--muted);}
+.site-footer{margin-top:72px;border-top:3px solid var(--teal);padding:22px 0;text-align:center;font-size:12px;color:var(--muted);}
+.site-footer strong{color:var(--text);}
+@media(max-width:640px){.fw-grid{grid-template-columns:1fr 1fr;}.cg-grid{grid-template-columns:1fr 1fr;}}
+</style>
 
-  /* Top bar */
-  .topbar {
-    background: var(--text);
-    color: rgba(255,255,255,0.7);
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-align: center;
-    padding: 6px 0;
-  }
-  .topbar span { color: var(--teal); font-weight: 700; }
-
-  /* Header */
-  .site-header {
-    background: var(--white);
-    border-bottom: 3px solid var(--teal);
-    padding: 20px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  }
-  .header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .header-brand .course-code {
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--teal);
-    font-weight: 700;
-  }
-  .header-brand .course-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--text);
-  }
-  .header-meta {
-    font-size: 12px;
-    color: var(--muted);
-    text-align: right;
-  }
-
-  /* Back link */
-  .back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--teal-dark);
-    font-size: 13px;
-    font-weight: 600;
-    padding: 8px 0;
-    transition: gap 0.2s;
-  }
-  .back-link:hover { gap: 10px; }
-
-  /* Hero */
-  .hero {
-    padding: 48px 0 36px;
-    text-align: center;
-  }
-  .hero .unit-badge {
-    display: inline-block;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 700;
-    padding: 4px 14px;
-    border-radius: 20px;
-    margin-bottom: 16px;
-  }
-  .hero h1 {
-    font-size: clamp(22px, 4vw, 36px);
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: var(--text);
-  }
-  .hero .subtitle {
-    font-size: 16px;
-    color: var(--muted);
-    margin-bottom: 28px;
-  }
-  .hero-stats {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    flex-wrap: wrap;
-  }
-  .hero-stat { text-align: center; }
-  .hero-stat .num {
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 1;
-  }
-  .hero-stat .label {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    margin-top: 4px;
-  }
-
-  /* Set section */
-  .set-section { margin-bottom: 48px; }
-  .set-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid #e9ecef;
-  }
-  .set-header h2 {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--text);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .set-count {
-    font-size: 12px;
-    color: var(--muted);
-    background: #f0f0f0;
-    padding: 3px 10px;
-    border-radius: 12px;
-  }
-
-  /* Framework grid */
-  .framework-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
-  }
-  .fw-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    padding: 20px;
-    box-shadow: var(--shadow);
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    position: relative;
-    overflow: hidden;
-    border-top: 4px solid transparent;
-  }
-  .fw-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-hover);
-  }
-  .fw-card .fw-name {
-    font-size: 14px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: var(--text);
-    line-height: 1.3;
-  }
-  .fw-card .fw-desc {
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.5;
-  }
-  .fw-card .fw-badge {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    padding: 2px 7px;
-    border-radius: 8px;
-    opacity: 0.8;
-  }
-  .fw-card .fw-thumb {
-    width: 100%;
-    height: 80px;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    font-weight: 900;
-    letter-spacing: -1px;
-    opacity: 0.15;
-  }
-
-  /* Index: unit accordion */
-  .unit-accordion { margin-bottom: 16px; }
-  .unit-accordion-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 24px;
-    border-radius: var(--radius);
-    cursor: pointer;
-    user-select: none;
-    transition: opacity 0.2s;
-  }
-  .unit-accordion-header:hover { opacity: 0.9; }
-  .unit-accordion-header .unit-num {
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 700;
-    opacity: 0.8;
-    margin-bottom: 4px;
-  }
-  .unit-accordion-header h3 {
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--white);
-  }
-  .unit-accordion-header .chevron {
-    font-size: 20px;
-    color: rgba(255,255,255,0.7);
-    transition: transform 0.3s;
-  }
-  .unit-accordion-header.open .chevron { transform: rotate(180deg); }
-  .unit-accordion-body {
-    display: none;
-    background: var(--white);
-    border-radius: 0 0 var(--radius) var(--radius);
-    padding: 8px 0;
-    box-shadow: var(--shadow);
-  }
-  .unit-accordion-body.open { display: block; }
-  .resource-link {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 14px 24px;
-    border-bottom: 1px solid #f0f0f0;
-    transition: background 0.15s;
-  }
-  .resource-link:last-child { border-bottom: none; }
-  .resource-link:hover { background: var(--eubs-bg); }
-  .resource-link .rl-badge {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .resource-link .rl-content { flex: 1; }
-  .resource-link .rl-title {
-    font-size: 14px;
-    font-weight: 700;
-    margin-bottom: 3px;
-  }
-  .resource-link .rl-meta {
-    font-size: 12px;
-    color: var(--muted);
-  }
-  .resource-link .rl-tag {
-    font-size: 10px;
-    color: var(--muted);
-    background: #f0f0f0;
-    padding: 2px 8px;
-    border-radius: 6px;
-    white-space: nowrap;
-    align-self: center;
-  }
-
-  /* Activity phases */
-  .phase-list { list-style: none; }
-  .phase-item {
-    display: flex;
-    gap: 16px;
-    padding: 20px 0;
-    border-bottom: 1px solid #f0f0f0;
-  }
-  .phase-item:last-child { border-bottom: none; }
-  .phase-badge {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    padding: 4px 10px;
-    border-radius: 8px;
-    white-space: nowrap;
-    height: fit-content;
-  }
-  .phase-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-  .phase-content p { font-size: 14px; color: var(--muted); }
-
-  /* Case study */
-  .case-hero {
-    padding: 48px 0;
-    text-align: center;
-  }
-  .case-brand {
-    font-size: 48px;
-    font-weight: 900;
-    letter-spacing: -2px;
-    margin-bottom: 12px;
-  }
-  .case-teaser {
-    font-size: 18px;
-    font-style: italic;
-    color: var(--muted);
-    margin-bottom: 24px;
-  }
-  .case-section { margin-bottom: 36px; }
-  .case-section h2 {
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #e9ecef;
-  }
-  .case-section p { font-size: 15px; line-height: 1.75; color: var(--text); margin-bottom: 12px; }
-  .case-questions ol { padding-left: 20px; }
-  .case-questions li { font-size: 15px; margin-bottom: 10px; line-height: 1.6; }
-
-  /* Prereading */
-  .prereading-hero { padding: 48px 0 24px; }
-  .prereading-hero .key-framework {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 6px 16px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-  }
-
-  /* Reflection */
-  .reflection-cards { display: grid; grid-template-columns: 1fr; gap: 20px; }
-  .reflection-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    padding: 28px;
-    box-shadow: var(--shadow);
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-  }
-  .reflection-num {
-    font-size: 32px;
-    font-weight: 900;
-    line-height: 1;
-    opacity: 0.2;
-    flex-shrink: 0;
-    width: 40px;
-  }
-  .reflection-card p { font-size: 16px; line-height: 1.7; }
-
-  /* Index hero */
-  .index-hero {
-    padding: 60px 0 48px;
-    text-align: center;
-  }
-  .index-hero .eubs-label {
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--teal);
-    font-weight: 700;
-    margin-bottom: 12px;
-  }
-  .index-hero h1 {
-    font-size: clamp(28px, 5vw, 52px);
-    font-weight: 700;
-    line-height: 1.15;
-    margin-bottom: 16px;
-  }
-  .index-hero .tagline { font-size: 17px; color: var(--muted); margin-bottom: 36px; }
-  .index-stats {
-    display: flex;
-    justify-content: center;
-    gap: 48px;
-    flex-wrap: wrap;
-  }
-  .index-stat .num { font-size: 48px; font-weight: 700; color: var(--teal); line-height: 1; }
-  .index-stat .label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-top: 4px; }
-
-  /* Complete gallery */
-  .complete-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 12px;
-  }
-  .complete-card {
-    background: var(--white);
-    border-radius: 10px;
-    padding: 14px 16px;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
-    border-left: 4px solid transparent;
-  }
-  .complete-card .cc-name { font-size: 12px; font-weight: 700; margin-bottom: 4px; }
-  .complete-card .cc-unit { font-size: 10px; color: var(--muted); }
-
-  /* Footer */
-  .site-footer {
-    margin-top: 80px;
-    border-top: 3px solid var(--teal);
-    padding: 24px 0;
-    text-align: center;
-    font-size: 12px;
-    color: var(--muted);
-  }
-  .site-footer strong { color: var(--text); }
-
-  @media (max-width: 600px) {
-    .framework-grid { grid-template-columns: 1fr 1fr; }
-    .complete-grid { grid-template-columns: 1fr 1fr; }
-  }
+<style>
+#modal-overlay{position:fixed;inset:0;background:rgba(8,8,20,0.78);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);z-index:9000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.22s;}
+#modal-overlay.active{opacity:1;pointer-events:all;}
+#modal-box{background:#ffffff;border-radius:16px;width:100%;max-width:660px;max-height:90vh;overflow-y:auto;box-shadow:0 28px 90px rgba(0,0,0,0.38);transform:translateY(20px) scale(0.97);transition:transform 0.22s;position:relative;}
+#modal-overlay.active #modal-box{transform:translateY(0) scale(1);}
+#modal-color-bar{height:5px;border-radius:16px 16px 0 0;}
+#modal-inner{padding:28px 32px 28px;}
+#modal-header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:20px;}
+#modal-header-left{flex:1;}
+#modal-label-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;}
+#m-slibrary-header{font-size:10px;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:#888;}
+#m-unit-badge{font-size:10px;font-weight:700;letter-spacing:0.08em;padding:2px 9px;border-radius:8px;background:#f0f0f0;color:#666;}
+#m-title{font-size:24px;font-weight:800;color:#1a1a2e;line-height:1.2;margin-bottom:5px;font-family:Arial,Helvetica,sans-serif;}
+#m-itten-line{font-size:11px;color:#aaa;font-style:italic;}
+#modal-close{background:#f0f0f2;border:none;width:34px;height:34px;border-radius:50%;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#666;transition:background .15s,color .15s;}
+#modal-close:hover{background:#dde0e4;color:#333;}
+#modal-lead{border-left:4px solid #ccc;margin:0 0 14px;padding:12px 18px;border-radius:0 6px 6px 0;}
+#modal-lead p{font-size:15px;font-weight:700;font-style:italic;line-height:1.65;margin:0;font-family:Arial,Helvetica,sans-serif;}
+#m-sub-text{font-size:13px;color:#888;font-style:italic;margin-bottom:22px;line-height:1.5;}
+#modal-bullets{margin-bottom:24px;}
+.m-bullet-item{display:flex;align-items:baseline;gap:12px;padding:11px 0;}
+.m-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:2px;display:inline-block;background:#ccc;}
+.m-bullet-text{font-size:14px;line-height:1.65;color:#333;}
+.m-divider{border:none;border-top:1px solid #e8eaed;margin:0;}
+#modal-reference{border-radius:0 8px 8px 0;border-left:4px solid #ccc;padding:16px 20px;margin-top:4px;}
+#modal-ref-label{font-size:10px;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:#888;margin-bottom:8px;}
+#m-ref-text{font-size:13px;line-height:1.75;color:#444;margin:0;}
+@media(max-width:580px){#modal-inner{padding:20px 18px 20px;}#m-title{font-size:19px;}}
 </style>
 </head>
 <body>
+<script>
+(function(){
+  document.addEventListener('contextmenu',e=>e.preventDefault());
+  ['copy','cut','paste'].forEach(ev=>document.addEventListener(ev,e=>e.preventDefault()));
+  document.addEventListener('keydown',e=>{
+    const k=e.key.toLowerCase(),c=e.ctrlKey||e.metaKey;
+    if(c&&(k==='c'||k==='x'||k==='v'||k==='s'||k==='u'||k==='a'||k==='p')){e.preventDefault();return false;}
+    if(e.key==='F12'||(c&&e.shiftKey&&(k==='i'||k==='j'||k==='c'))){e.preventDefault();return false;}
+  });
+  document.addEventListener('dragstart',e=>e.preventDefault());
+})();
+</script>
+<style>
+@media print{body *{visibility:hidden!important;}body::after{visibility:visible!important;content:'© Dr. Hildegard Haas | MLUXR302 | EU Business School — Printing not permitted.';display:block;font-size:18px;text-align:center;padding:80px 40px;font-family:Arial,sans-serif;}}
+body,*{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+</style>
 <div class="topbar">
-  <span>MLUXR302</span> · Sustainable Value Creation in Fashion &amp; Luxury · © 2026 Dr. Hildegard Haas · EU Business School
+  <strong>MLUXR302</strong> &nbsp;&middot;&nbsp; Sustainable Value Creation in Fashion &amp; Luxury
+  &nbsp;&middot;&nbsp; <strong>Itten Colour Theory 1961</strong> &nbsp;&middot;&nbsp;
+  &copy; 2026 Dr. Hildegard Haas &nbsp;&middot;&nbsp; EU Business School
 </div>
 <header class="site-header">
-  <div class="container header-inner">
-    <div class="header-brand">
-      <div class="course-code">MLUXR302 · Masters Level 7</div>
-      <div class="course-title">Sustainable Value Creation in Fashion &amp; Luxury</div>
+  <div class="container hdr-inner">
+    <div class="hdr-brand">
+      <div class="code">MLUXR302 &middot; Masters Level 7 &middot; EU Business School</div>
+      <div class="name">Sustainable Value Creation in Fashion &amp; Luxury</div>
     </div>
-    <div class="header-meta">
-      Dr. Hildegard Haas<br/>EU Business School · www.euruni.edu
-    </div>
+    <div class="hdr-meta">Dr. Hildegard Haas<br/>hildegard.haas@euruni.edu &middot; www.euruni.edu</div>
   </div>
 </header>
-<main>
-  <div class="container">
-    <a class="back-link" href="index.html">← Back to Course Overview</a>
-    
-  <div class="hero">
-    <div class="unit-badge" style="background:rgba(26,35,126,0.12);color:#1A237E">MLUXR302 · Unit 1 · Itten Blue</div>
-    <h1>Introduction to Sustainability in Fashion & Luxury</h1>
-    <p class="subtitle">Foundations, Frameworks & the Fashion–Sustainability Nexus</p>
-    <p style="font-size:12px;color:var(--muted);margin-bottom:28px;">Select any framework to explore it in detail</p>
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="num" style="color:#1A237E">3</div><div class="label">Slibraries</div></div>
-      <div class="hero-stat"><div class="num" style="color:#1A237E">15</div><div class="label">Frameworks</div></div>
-      <div class="hero-stat"><div class="num" style="color:#1A237E">1–3</div><div class="label">Set Range</div></div>
-    </div>
-  </div>
+<main><div class="container">
+<a class="back-link" href="index.html">&#8592; Course Overview</a>
+<div class="hero"><div class="unit-pill" style="background:rgba(37,99,235,0.1);color:#2563EB;">MLUXR302 &middot; Unit 1 &middot; Ultramarine Blue &middot; Itten</div><h1>Introduction to Sustainability in Fashion & Luxury</h1><p class="sub">Foundations, Frameworks & the Fashion–Sustainability Nexus</p><p class="hero-hint">Click any framework card to open it in detail</p><div class="hero-stats"><div class="hero-stat"><div class="num" style="color:#2563EB">3</div><div class="lbl">Slibraries</div></div><div class="hero-stat"><div class="num" style="color:#2563EB">15</div><div class="lbl">Frameworks</div></div><div class="hero-stat"><div class="num" style="color:#2563EB">1–3</div><div class="lbl">Sets</div></div></div></div><div style="text-align:center;"><div class="itten-tag"><div class="itten-dot" style="background:#2563EB"></div><span>Itten: <strong style="color:#2563EB">Ultramarine Blue #2563EB</strong> &nbsp;—&nbsp; Foundation, trust</span></div></div><div class="set-section"><div class="set-hdr"><h2><div class="set-num" style="background:#2563EB">1</div>Set 1 — Core Sustainability Theory</h2><span class="set-tag">5 frameworks &middot; click any card to explore</span></div><div class="fw-grid"><div class="fw-card" style="border-top-color:#2563EB;" data-color="#2563EB" data-rgb="37,99,235" data-sl="1" data-unit="MLUXR302 · Unit 1" data-setname="Core Sustainability Theory" data-name="Triple Bottom Line" data-itten="Itten: Ultramarine Blue — Foundation, trust" data-lead="A model demanding that business measures success across three dimensions simultaneously — people, planet and profit — rejecting the primacy of financial returns alone." data-sub="People–Planet–Profit: the three interdependent pillars of sustainable performance" data-b1="People → the social dimension: worker welfare, community impact, human rights and equity across the value chain" data-b2="Planet → the environmental dimension: carbon emissions, water, land use and biodiversity impact" data-b3="Profit → the economic dimension: financial viability that sustains and enables the other two pillars" data-b4="Interdependence → no pillar stands alone: companies optimising profit at the expense of people or planet generate hidden costs that ultimately destroy long-term value" data-ref="Elkington, J. (1997) <em>Cannibals with Forks: The Triple Bottom Line of 21st Century Business</em>. Oxford: Capstone."><div class="fw-card-icon"><svg viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="28" cy="16" r="13" fill="rgba(37,99,235,0.25)" stroke="#2563EB" stroke-width="1.5"/>
+  <circle cx="18" cy="33" r="13" fill="rgba(37,99,235,0.25)" stroke="#2563EB" stroke-width="1.5"/>
+  <circle cx="38" cy="33" r="13" fill="rgba(37,99,235,0.25)" stroke="#2563EB" stroke-width="1.5"/>
+  <circle cx="28" cy="28" r="5" fill="#2563EB" opacity="0.7"/>
+  <text x="28" y="15" text-anchor="middle" font-size="5.5" fill="#2563EB" font-weight="700">P</text>
+  <text x="14" y="38" text-anchor="middle" font-size="5" fill="#2563EB" font-weight="700">PP</text>
+  <text x="42" y="38" text-anchor="middle" font-size="5" fill="#2563EB" font-weight="700">PR</text>
+</svg></div><div class="fw-card-body"><div class="fw-card-name">Triple Bottom Line</div><div class="fw-card-desc">People, Planet, Profit — Elkington's 1994 accountability framework</div></div><div class="fw-card-foot"><span class="fw-sl-badge" style="background:rgba(37,99,235,0.12);color:#2563EB;">Slibrary 1</span><span class="fw-arrow">&#8594;</span></div></div><div class="fw-card" style="border-top-color:#2563EB;" data-color="#2563EB" data-rgb="37,99,235" data-sl="1" data-unit="MLUXR302 · Unit 1" data-setname="Core Sustainability Theory" data-name="Doughnut Economics" data-itten="Itten: Ultramarine Blue — Foundation, trust" data-lead="A radical reframing of economic success — not GDP growth, but a thriving humanity within the means of a living planet, shaped like a doughnut." data-sub="Social foundation as inner boundary · Planetary ceiling as outer boundary · Safe and just space between" data-b1="Inner ring → the social foundation: 12 dimensions of human wellbeing that no person should fall below (food, water, health, education, gender equality)" data-b2="Outer ring → the planetary ceiling: 9 Earth-system boundaries (climate, biodiversity, nitrogen, water, etc.) that must not be breached" data-b3="The safe and just space → the doughnut between: where an economy that meets human needs without exceeding planetary limits must operate" data-b4="Fashion implication → most fast fashion overshoots the planetary ceiling while leaving many garment workers below the social foundation — the doughnut reframes the challenge" data-ref="Raworth, K. (2017) <em>Doughnut Economics: Seven Ways to Think Like a 21st-Century Economist</em>. London: Random House Business Books."><div class="fw-card-icon"><svg viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="28" cy="22" r="19" fill="rgba(37,99,235,0.15)" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="28" cy="22" r="10" fill="white" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="28" cy="22" r="4" fill="#2563EB" opacity="0.6"/>
+  <text x="28" y="8" text-anchor="middle" font-size="4.5" fill="#2563EB" font-weight="700">CEILING</text>
+  <text x="28" y="26" text-anchor="middle" font-size="4" fill="#2563EB">SAFE</text>
+  <text x="28" y="38" text-anchor="middle" font-size="4.5" fill="#2563EB" font-weight="700">FLOOR</text>
+</svg></div><div class="fw-card-body"><div class="fw-card-name">Doughnut Economics</div><div class="fw-card-desc">Social foundation + planetary ceiling — Raworth's safe operating space</div></div><div class="fw-card-foot"><span class="fw-sl-badge" style="background:rgba(37,99,235,0.12);color:#2563EB;">Slibrary 1</span><span class="fw-arrow">&#8594;</span></div></div><div class="fw-card" style="border-top-color:#2563EB;" data-color="#2563EB" data-rgb="37,99,235" data-sl="1" data-unit="MLUXR302 · Unit 1" data-setname="Core Sustainability Theory" data-name="UN SDGs 17 Goals" data-itten="Itten: Ultramarine Blue — Foundation, trust" data-lead="A universal blueprint agreed by 193 nations in 2015, setting 17 interconnected goals to end poverty, protect the planet and ensure prosperity by 2030." data-sub="17 Goals · 169 Targets · 232 Indicators — the world&#39;s shared sustainability agenda to 2030" data-b1="Economic SDGs → Goals 1, 2, 8, 9, 10: end poverty and hunger, promote decent work, build resilient infrastructure and reduce inequalities" data-b2="Social SDGs → Goals 3, 4, 5, 11, 16, 17: ensure health, quality education, gender equality, sustainable cities and strong institutions" data-b3="Environmental SDGs → Goals 6, 7, 12, 13, 14, 15: clean water, affordable energy, responsible production, climate action and ecosystem protection" data-b4="Fashion mapping → Goal 8 (decent work), Goal 12 (responsible production) and Goal 13 (climate action) are the most directly material to fashion and luxury brands" data-ref="United Nations (2015) <em>Transforming Our World: The 2030 Agenda for Sustainable Development</em>. New York: United Nations General Assembly, A/RES/70/1."><div class="fw-card-icon"><svg viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="4" width="7" height="7" rx="1.5" fill="#2563EB" opacity="0.25"/><rect x="12.5" y="4" width="7" height="7" rx="1.5" fill="#2563EB" opacity="0.30"/><rect x="21" y="4" width="7" height="7" rx="1.5" fill="#2563EB" opacity="0.34"/><rect x="29.5" y="4" width="7" height="7" rx="1.5" fill="#2563EB" opacity="0.39"/><rect x="38" y="4" width="7" height="7" rx="1.5" fill="#2563EB" opacity="0.44"/><rect x="46.5" y="4" width="7" height="7" rx="1.5" fill="#2563EB" opacity="0.48"/><rect x="4" y="13" width="7" height="7" rx="1.5" fill="#2563EB" opacity="0.53"/><rect x="12.5" y="13" width="7" height="7" rx="1.5" fill="#2563EB" opacity="0.58"/><rect x="21" y="13" width="7" height="7" rx="1.5" fill="#2563EB" opacity="0.63"/><rect x="29.5" y="13" width="7" height="7" rx="1.5" fill="#2563EB" opacity="0.67"/><rect x="38" y="13" width="7" height="7" rx="1.5" fill="#2563EB" opacity="0.72"/><rect x="46.5" y="13" width="7" height="7" rx="1.5" fill="#2563EB" opacity="0.77"/><rect x="4" y="22" width="7" height="7" rx="1.5" fill="#2563EB" opacity="0.81"/><rect x="12.5" y="22" width="7" height="7" rx="1.5" fill="#2563EB" opacity="0.86"/><rect x="21" y="22" width="7" height="7" rx="1.5" fill="#2563EB" opacity="0.91"/><rect x="29.5" y="22" width="7" height="7" rx="1.5" fill="#2563EB" opacity="0.95"/><rect x="38" y="22" width="7" height="7" rx="1.5" fill="#2563EB" opacity="1.00"/>
+  <text x="28" y="42" text-anchor="middle" font-size="5" fill="#2563EB" font-weight="700">17 SDGs</text>
+</svg></div><div class="fw-card-body"><div class="fw-card-name">UN SDGs 17 Goals</div><div class="fw-card-desc">2030 global development agenda across economic, social and environmental pillars</div></div><div class="fw-card-foot"><span class="fw-sl-badge" style="background:rgba(37,99,235,0.12);color:#2563EB;">Slibrary 1</span><span class="fw-arrow">&#8594;</span></div></div><div class="fw-card" style="border-top-color:#2563EB;" data-color="#2563EB" data-rgb="37,99,235" data-sl="1" data-unit="MLUXR302 · Unit 1" data-setname="Core Sustainability Theory" data-name="Brundtland Definition" data-itten="Itten: Ultramarine Blue — Foundation, trust" data-lead="The most cited sustainability definition in history — twenty-seven words that set the frame for every corporate sustainability strategy written in the last four decades." data-sub="&#39;Development that meets the needs of the present without compromising the ability of future generations to meet their own needs&#39; — Brundtland Commission, 1987" data-b1="Present needs → the obligation to address current poverty, inequality and unmet human needs — sustainability is not only a future concern but a present justice issue" data-b2="Future generations → intergenerational equity: the ability of people not yet born to live well must constrain choices made today" data-b3="Needs not wants → the definition privileges basic human needs over consumer preferences, repositioning sustainability as a question of sufficiency and justice" data-b4="Strategic implication → a fashion brand&#39;s sustainability claim must pass a dual test: does it address present needs (living wages, safe conditions) and protect future capacity (ecosystems, climate)?" data-ref="World Commission on Environment and Development (1987) <em>Our Common Future</em> [The Brundtland Report]. Oxford: Oxford University Press."><div class="fw-card-icon"><svg viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="6" width="48" height="30" rx="5" fill="rgba(37,99,235,0.1)" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="10" y="16" font-size="20" fill="#2563EB" font-weight="900" opacity="0.3">"</text>
+  <text x="20" y="22" text-anchor="middle" font-size="7" fill="#2563EB" font-weight="700">1987</text>
+  <text x="36" y="22" text-anchor="middle" font-size="5.5" fill="#2563EB">Brundtland</text>
+  <text x="28" y="30" text-anchor="middle" font-size="4.5" fill="rgba(37,99,235,0.7)">future generations</text>
+  <text x="28" y="40" text-anchor="middle" font-size="4" fill="#2563EB">WCED Report</text>
+</svg></div><div class="fw-card-body"><div class="fw-card-name">Brundtland Definition</div><div class="fw-card-desc">Meeting present needs without compromising future generations' ability to meet theirs</div></div><div class="fw-card-foot"><span class="fw-sl-badge" style="background:rgba(37,99,235,0.12);color:#2563EB;">Slibrary 1</span><span class="fw-arrow">&#8594;</span></div></div><div class="fw-card" style="border-top-color:#2563EB;" data-color="#2563EB" data-rgb="37,99,235" data-sl="1" data-unit="MLUXR302 · Unit 1" data-setname="Core Sustainability Theory" data-name="Sustainability Pillars Pyramid" data-itten="Itten: Ultramarine Blue — Foundation, trust" data-lead="A nested model showing that economic activity is bounded by social systems, which are in turn bounded by natural systems — not three equal pillars, but a dependency hierarchy." data-sub="Environmental → Social → Economic: three nested systems, not three equal columns" data-b1="Environmental layer → the base: natural ecosystems provide the raw materials, stable climate and clean water without which human society cannot function" data-b2="Social layer → the middle: human systems — communities, institutions, labour markets — are embedded within and dependent on natural systems" data-b3="Economic layer → the apex: financial activity is a subset of social systems, not separate from or superior to them" data-b4="The key insight → when business treats environmental and social costs as externalities, it is extracting value from the lower layers without payment — a model that is structurally unsustainable" data-ref="Hopwood, B., Mellor, M. and O&#39;Brien, G. (2005) &#39;Sustainable development: mapping different approaches&#39;, <em>Sustainable Development</em>, 13(1), pp. 38–52. doi: 10.1002/sd.244."><div class="fw-card-icon"><svg viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="28,3 52,40 4,40" fill="rgba(37,99,235,0.1)" stroke="#2563EB" stroke-width="1.5"/>
+  <polygon points="28,12 44,33 12,33" fill="rgba(37,99,235,0.3)" stroke="#2563EB" stroke-width="1"/>
+  <polygon points="28,21 36,33 20,33" fill="#2563EB" opacity="0.7"/>
+  <text x="28" y="11" text-anchor="middle" font-size="4" fill="#2563EB">ECO</text>
+  <text x="28" y="24" text-anchor="middle" font-size="4" fill="#2563EB">SOC</text>
+  <text x="28" y="36" text-anchor="middle" font-size="4.5" fill="#2563EB" font-weight="700">ENV</text>
+</svg></div><div class="fw-card-body"><div class="fw-card-name">Sustainability Pillars Pyramid</div><div class="fw-card-desc">Environmental → Social → Economic — nested dependency hierarchy</div></div><div class="fw-card-foot"><span class="fw-sl-badge" style="background:rgba(37,99,235,0.12);color:#2563EB;">Slibrary 1</span><span class="fw-arrow">&#8594;</span></div></div></div></div><div class="set-section"><div class="set-hdr"><h2><div class="set-num" style="background:#2563EB">2</div>Set 2 — Fashion Industry Context</h2><span class="set-tag">5 frameworks &middot; click any card to explore</span></div><div class="fw-grid"><div class="fw-card" style="border-top-color:#2563EB;" data-color="#2563EB" data-rgb="37,99,235" data-sl="2" data-unit="MLUXR302 · Unit 1" data-setname="Fashion Industry Context" data-name="Fashion Footprint Triangle" data-itten="Itten: Ultramarine Blue — Foundation, trust" data-lead="Three interconnected dimensions — carbon, water and waste — that together account for fashion&#39;s catastrophic environmental impact, each magnifying the others." data-sub="Carbon · Water · Waste: the three hotspots that define fashion&#39;s environmental emergency" data-b1="Carbon → fashion accounts for 10% of global CO₂ emissions annually: 1.2 billion tonnes, more than international aviation and shipping combined" data-b2="Water → 2,700 litres to make one cotton T-shirt; 7,500 litres for one pair of jeans; the Aral Sea lost 90% of its volume to cotton irrigation" data-b3="Waste → 92 million tonnes of textile waste produced annually; enough to fill the Eiffel Tower with discarded clothes 500 times over" data-b4="Interdependence → reducing carbon often requires water-intensive processes; reducing waste requires design investment that increases upstream energy use" data-ref="Ellen MacArthur Foundation (2017) <em>A New Textiles Economy: Redesigning Fashion&#39;s Future</em>. Isle of Wight: Ellen MacArthur Foundation."><div class="fw-card-icon"><svg viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="28,3 52,40 4,40" fill="rgba(37,99,235,0.1)" stroke="#2563EB" stroke-width="1.5"/>
+  <line x1="17" y1="25" x2="39" y2="25" stroke="#2563EB" stroke-width="1" stroke-dasharray="2,1"/>
+  <text x="9" y="39" font-size="4.5" fill="#2563EB" font-weight="700">CO₂</text>
+  <text x="24" y="39" font-size="4.5" fill="#2563EB" font-weight="700">H₂O</text>
+  <text x="39" y="39" font-size="4.5" fill="#2563EB" font-weight="700">WST</text>
+  <text x="28" y="12" text-anchor="middle" font-size="4" fill="#2563EB">Fashion</text>
+</svg></div><div class="fw-card-body"><div class="fw-card-name">Fashion Footprint Triangle</div><div class="fw-card-desc">Carbon, water and waste hotspots across the apparel value chain</div></div><div class="fw-card-foot"><span class="fw-sl-badge" style="background:rgba(37,99,235,0.12);color:#2563EB;">Slibrary 2</span><span class="fw-arrow">&#8594;</span></div></div><div class="fw-card" style="border-top-color:#2563EB;" data-color="#2563EB" data-rgb="37,99,235" data-sl="2" data-unit="MLUXR302 · Unit 1" data-setname="Fashion Industry Context" data-name="Linear vs. Circular Economy" data-itten="Itten: Ultramarine Blue — Foundation, trust" data-lead="The most consequential design choice in any business model: whether to extract, use and discard, or to design out waste and keep materials at their highest value forever." data-sub="Take → Make → Use → Dispose (linear) vs. Design → Use → Recover → Regenerate (circular)" data-b1="Linear economy → the take-make-waste model: extract raw materials, manufacture products, sell to consumers, landfill or incinerate at end-of-life" data-b2="Circular economy → eliminate waste and pollution by design; circulate products and materials at their highest value; regenerate natural systems" data-b3="Inner loops are more valuable → reuse and repair preserve more value than recycling; the goal is to keep materials circulating at the highest possible level" data-b4="Fashion transition → the Ellen MacArthur Foundation estimates $500B of value is destroyed annually when clothing is landfilled or incinerated rather than recovered" data-ref="Ellen MacArthur Foundation (2013) <em>Towards the Circular Economy: Economic and Business Rationale for an Accelerated Transition</em>. Isle of Wight: Ellen MacArthur Foundation."><div class="fw-card-icon"><svg viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg">
+  <line x1="4" y1="14" x2="44" y2="14" stroke="rgba(37,99,235,0.3)" stroke-width="2"/>
+  <polygon points="44,11 52,14 44,17" fill="rgba(37,99,235,0.3)"/>
+  <text x="4" y="11" font-size="4.5" fill="rgba(37,99,235,0.5)" font-weight="700">LINEAR →</text>
+  <path d="M8,28 Q28,18 48,28 Q28,38 8,28Z" fill="rgba(37,99,235,0.2)" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="28" y="30" text-anchor="middle" font-size="5" fill="#2563EB" font-weight="700">CIRCULAR</text>
+  <text x="28" y="42" text-anchor="middle" font-size="4" fill="#2563EB">Ellen MacArthur</text>
+</svg></div><div class="fw-card-body"><div class="fw-card-name">Linear vs. Circular Economy</div><div class="fw-card-desc">Take-make-waste model contrasted with the circular closed-loop alternative</div></div><div class="fw-card-foot"><span class="fw-sl-badge" style="background:rgba(37,99,235,0.12);color:#2563EB;">Slibrary 2</span><span class="fw-arrow">&#8594;</span></div></div><div class="fw-card" style="border-top-color:#2563EB;" data-color="#2563EB" data-rgb="37,99,235" data-sl="2" data-unit="MLUXR302 · Unit 1" data-setname="Fashion Industry Context" data-name="Greenwashing Spectrum" data-itten="Itten: Ultramarine Blue — Foundation, trust" data-lead="A systematic taxonomy of misleading environmental claims, revealing that greenwashing is not a single deception but a spectrum of practices ranging from selective omission to outright fabrication." data-sub="Seven sins of greenwashing: from hidden trade-offs to outright fabrication" data-b1="Hidden trade-offs → a product claimed as &#39;sustainable&#39; on one attribute (recycled fibre) while significant harms in other areas (chemical processing, worker conditions) go unmentioned" data-b2="Vague claims → meaningless terms — &#39;eco-friendly&#39;, &#39;natural&#39;, &#39;green&#39; — deployed without definition, evidence or third-party verification" data-b3="False labels → invented certification logos, misleading imagery (green leaves) or claims of endorsement from organisations that do not exist" data-b4="Regulatory response → EU Green Claims Directive (2025) prohibits vague, unsubstantiated or selective claims with fines of up to 4% of annual global turnover" data-ref="TerraChoice Environmental Marketing (2010) <em>The Sins of Greenwashing: Home and Family Edition</em>. Ottawa: TerraChoice."><div class="fw-card-icon"><svg viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="28,3 52,40 4,40" fill="rgba(37,99,235,0.1)" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="28" y="30" text-anchor="middle" font-size="22" fill="#2563EB" font-weight="900">!</text>
+  <text x="28" y="42" text-anchor="middle" font-size="4.5" fill="#2563EB" font-weight="700">7 SINS</text>
+</svg></div><div class="fw-card-body"><div class="fw-card-name">Greenwashing Spectrum</div><div class="fw-card-desc">Seven sins of greenwashing: from hidden trade-offs to outright falsehoods</div></div><div class="fw-card-foot"><span class="fw-sl-badge" style="background:rgba(37,99,235,0.12);color:#2563EB;">Slibrary 2</span><span class="fw-arrow">&#8594;</span></div></div><div class="fw-card" style="border-top-color:#2563EB;" data-color="#2563EB" data-rgb="37,99,235" data-sl="2" data-unit="MLUXR302 · Unit 1" data-setname="Fashion Industry Context" data-name="ESG Framework" data-itten="Itten: Ultramarine Blue — Foundation, trust" data-lead="A three-dimensional lens through which investors, regulators and brands evaluate business performance beyond financial returns — the lingua franca of sustainable finance." data-sub="Environmental · Social · Governance: the three pillars of non-financial performance reporting" data-b1="Environmental → climate risk exposure, carbon emissions, water and energy consumption, biodiversity impact, waste management and resource efficiency" data-b2="Social → labour standards, human rights in the supply chain, diversity and inclusion, community relations, health and safety, and product safety" data-b3="Governance → board structure and diversity, executive pay alignment, anti-corruption policies, shareholder rights, transparency and accountability mechanisms" data-b4="Capital markets impact → MSCI ESG ratings now influence index inclusion and cost of capital; luxury brands with strong ESG scores access sustainability-linked financing at lower rates" data-ref="Principles for Responsible Investment (2006) <em>The PRI Reporting Framework</em>. London: UNPRI."><div class="fw-card-icon"><svg viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="8" width="14" height="28" rx="3" fill="#2563EB"/>
+  <rect x="21" y="8" width="14" height="28" rx="3" fill="rgba(37,99,235,0.6)"/>
+  <rect x="38" y="8" width="14" height="28" rx="3" fill="rgba(37,99,235,0.3)" stroke="#2563EB" stroke-width="1"/>
+  <text x="11" y="26" text-anchor="middle" font-size="9" fill="white" font-weight="900">E</text>
+  <text x="28" y="26" text-anchor="middle" font-size="9" fill="white" font-weight="900">S</text>
+  <text x="45" y="26" text-anchor="middle" font-size="9" fill="#2563EB" font-weight="900">G</text>
+  <text x="28" y="42" text-anchor="middle" font-size="4.5" fill="#2563EB" font-weight="700">ESG FRAMEWORK</text>
+</svg></div><div class="fw-card-body"><div class="fw-card-name">ESG Framework</div><div class="fw-card-desc">Environmental, Social and Governance dimensions for investor-grade reporting</div></div><div class="fw-card-foot"><span class="fw-sl-badge" style="background:rgba(37,99,235,0.12);color:#2563EB;">Slibrary 2</span><span class="fw-arrow">&#8594;</span></div></div><div class="fw-card" style="border-top-color:#2563EB;" data-color="#2563EB" data-rgb="37,99,235" data-sl="2" data-unit="MLUXR302 · Unit 1" data-setname="Fashion Industry Context" data-name="IPCC 1.5°C Pathway" data-itten="Itten: Ultramarine Blue — Foundation, trust" data-lead="The scientific consensus encoded: limiting global warming to 1.5°C above pre-industrial levels requires cutting global CO₂ emissions by 45% by 2030 and reaching net zero by 2050." data-sub="45% reduction by 2030 → net zero by 2050 → the non-negotiable science that fashion strategy must align to" data-b1="Carbon budget → the world can emit approximately 400 GtCO₂ before breaching 1.5°C; at current rates this budget is exhausted by 2030" data-b2="Fashion&#39;s share → the industry must reduce Scope 3 emissions by 30% by 2030 to align with the Fashion Industry Charter for Climate Action" data-b3="System change required → incremental efficiency improvements are insufficient; the transition requires a structural shift from fossil-based fibres and linear production to renewable and circular systems" data-b4="Physical risk → failing to limit warming to 1.5°C exposes fashion supply chains — concentrated in South and Southeast Asia — to catastrophic climate impacts: floods, drought, extreme heat" data-ref="IPCC (2018) <em>Special Report: Global Warming of 1.5°C</em> [Summary for Policymakers]. Geneva: Intergovernmental Panel on Climate Change."><div class="fw-card-icon"><svg viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg">
+  <polyline points="4,38 14,35 24,30 34,20 44,12 52,8" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="4,38 14,37 24,36 34,35 44,34 52,33" fill="none" stroke="rgba(37,99,235,0.3)" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="46" y="7" font-size="5.5" fill="#2563EB" font-weight="900">1.5°</text>
+  <text x="46" y="32" font-size="4.5" fill="rgba(37,99,235,0.5)">2.0°</text>
+  <text x="4" y="43" font-size="4" fill="#2563EB">IPCC 2018</text>
+</svg></div><div class="fw-card-body"><div class="fw-card-name">IPCC 1.5°C Pathway</div><div class="fw-card-desc">Science-based emission reduction curve that fashion must align to by 2030</div></div><div class="fw-card-foot"><span class="fw-sl-badge" style="background:rgba(37,99,235,0.12);color:#2563EB;">Slibrary 2</span><span class="fw-arrow">&#8594;</span></div></div></div></div><div class="set-section"><div class="set-hdr"><h2><div class="set-num" style="background:#2563EB">3</div>Set 3 — Strategic Response</h2><span class="set-tag">5 frameworks &middot; click any card to explore</span></div><div class="fw-grid"><div class="fw-card" style="border-top-color:#2563EB;" data-color="#2563EB" data-rgb="37,99,235" data-sl="3" data-unit="MLUXR302 · Unit 1" data-setname="Strategic Response" data-name="Materiality Matrix" data-itten="Itten: Ultramarine Blue — Foundation, trust" data-lead="A strategic prioritisation tool that separates issues requiring action from issues requiring monitoring, by mapping their significance to business performance against their significance to external stakeholders." data-sub="X-axis: significance to stakeholders · Y-axis: significance to business · Intersection: strategic priority" data-b1="Identification → map all potential environmental, social and governance issues relevant to the company&#39;s operations and value chain" data-b2="Assessment → evaluate each issue on two axes: the scale of its impact on the world (stakeholder perspective) and its impact on business value (financial perspective)" data-b3="Prioritisation → issues scoring high on both axes are material and require strategy, targets and disclosure; low-scoring issues can be monitored" data-b4="Double materiality → the EU&#39;s CSRD requires companies to assess materiality in both directions: impact of the business on the world, and impact of the world on the business" data-ref="Global Reporting Initiative (2013) <em>G4 Sustainability Reporting Guidelines</em>. Amsterdam: Global Reporting Initiative."><div class="fw-card-icon"><svg viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="4" width="24" height="16" rx="2" fill="rgba(37,99,235,0.15)" stroke="#2563EB" stroke-width="1"/>
+  <rect x="28" y="4" width="24" height="16" rx="2" fill="#2563EB" opacity="0.7"/>
+  <rect x="4" y="22" width="24" height="16" rx="2" fill="rgba(37,99,235,0.08)" stroke="#2563EB" stroke-width="1"/>
+  <rect x="28" y="22" width="24" height="16" rx="2" fill="rgba(37,99,235,0.4)" stroke="#2563EB" stroke-width="1"/>
+  <text x="16" y="14" text-anchor="middle" font-size="4" fill="#2563EB">Monitor</text>
+  <text x="40" y="14" text-anchor="middle" font-size="4" fill="white" font-weight="700">PRIORITY</text>
+  <text x="16" y="32" text-anchor="middle" font-size="4" fill="#2563EB">Inform</text>
+  <text x="40" y="32" text-anchor="middle" font-size="4" fill="#2563EB">Engage</text>
+  <text x="4" y="43" font-size="4" fill="#2563EB">GRI 2013</text>
+</svg></div><div class="fw-card-body"><div class="fw-card-name">Materiality Matrix</div><div class="fw-card-desc">Two-axis map of issue significance to stakeholders vs. business impact</div></div><div class="fw-card-foot"><span class="fw-sl-badge" style="background:rgba(37,99,235,0.12);color:#2563EB;">Slibrary 3</span><span class="fw-arrow">&#8594;</span></div></div><div class="fw-card" style="border-top-color:#2563EB;" data-color="#2563EB" data-rgb="37,99,235" data-sl="3" data-unit="MLUXR302 · Unit 1" data-setname="Strategic Response" data-name="Stakeholder Map" data-itten="Itten: Ultramarine Blue — Foundation, trust" data-lead="A strategic tool for identifying every party with a stake in or influence on a business&#39;s sustainability performance, and determining how to engage each group productively." data-sub="Identify → Prioritise → Engage: power × interest grid for systematic stakeholder management" data-b1="Identification → map all parties: investors, customers, employees, suppliers, workers in the supply chain, NGOs, regulators, communities and media" data-b2="Power × Interest grid → four quadrants: Manage Closely (high power, high interest), Keep Satisfied (high power, low interest), Keep Informed (low power, high interest), Monitor (low power, low interest)" data-b3="Engagement design → tailor message, channel and frequency to each quadrant; one-size communications reach no one effectively" data-b4="Fashion application → NGOs and transparency campaigners (Fashion Revolution, Clean Clothes Campaign) have low formal power but very high interest — their influence on brand reputation makes them a Manage Closely priority" data-ref="Freeman, R.E. (1984) <em>Strategic Management: A Stakeholder Approach</em>. Boston: Pitman."><div class="fw-card-icon"><svg viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="28" cy="22" r="7" fill="#2563EB"/>
+  <circle cx="28" cy="6" r="4" fill="rgba(37,99,235,0.4)" stroke="#2563EB" stroke-width="1"/><line x1="28" y1="22" x2="28" y2="6" stroke="rgba(37,99,235,0.5)" stroke-width="1"/><circle cx="41.85640646055102" cy="14" r="4" fill="rgba(37,99,235,0.4)" stroke="#2563EB" stroke-width="1"/><line x1="28" y1="22" x2="41.85640646055102" y2="14" stroke="rgba(37,99,235,0.5)" stroke-width="1"/><circle cx="41.85640646055102" cy="30" r="4" fill="rgba(37,99,235,0.4)" stroke="#2563EB" stroke-width="1"/><line x1="28" y1="22" x2="41.85640646055102" y2="30" stroke="rgba(37,99,235,0.5)" stroke-width="1"/><circle cx="28" cy="38" r="4" fill="rgba(37,99,235,0.4)" stroke="#2563EB" stroke-width="1"/><line x1="28" y1="22" x2="28" y2="38" stroke="rgba(37,99,235,0.5)" stroke-width="1"/><circle cx="14.14359353944898" cy="30" r="4" fill="rgba(37,99,235,0.4)" stroke="#2563EB" stroke-width="1"/><line x1="28" y1="22" x2="14.14359353944898" y2="30" stroke="rgba(37,99,235,0.5)" stroke-width="1"/><circle cx="14.143593539448982" cy="13.999999999999998" r="4" fill="rgba(37,99,235,0.4)" stroke="#2563EB" stroke-width="1"/><line x1="28" y1="22" x2="14.143593539448982" y2="13.999999999999998" stroke="rgba(37,99,235,0.5)" stroke-width="1"/>
+  <text x="28" y="24" text-anchor="middle" font-size="4" fill="white" font-weight="700">ORG</text>
+</svg></div><div class="fw-card-body"><div class="fw-card-name">Stakeholder Map</div><div class="fw-card-desc">Investors, consumers, workers, NGOs and regulators in a power–interest grid</div></div><div class="fw-card-foot"><span class="fw-sl-badge" style="background:rgba(37,99,235,0.12);color:#2563EB;">Slibrary 3</span><span class="fw-arrow">&#8594;</span></div></div><div class="fw-card" style="border-top-color:#2563EB;" data-color="#2563EB" data-rgb="37,99,235" data-sl="3" data-unit="MLUXR302 · Unit 1" data-setname="Strategic Response" data-name="Sustainability Maturity Ladder" data-itten="Itten: Ultramarine Blue — Foundation, trust" data-lead="A four-rung developmental model showing how organisations progress from reactive compliance to proactive transformation — and what distinguishes each stage." data-sub="Ad hoc → Compliant → Proactive → Transformative: four stages of organisational sustainability development" data-b1="Stage 1 — Ad hoc → no strategy, reactive responses to crises, sustainability seen as a PR issue or cost; no targets, no reporting, no accountability" data-b2="Stage 2 — Compliant → policies in place, minimum legal requirements met, targets set for visible issues (energy, waste), sustainability owned by a dedicated team" data-b3="Stage 3 — Proactive → sustainability integrated into product development, procurement and brand positioning; supplier engagement programmes; materiality-based reporting" data-b4="Stage 4 — Transformative → sustainability is core to business model and competitive strategy; value chain redesigned around circular or regenerative principles; industry leadership" data-ref="Lozano, R. (2012) &#39;Towards better embedding sustainability into companies&#39; systems&#39;, <em>Journal of Cleaner Production</em>, 25, pp. 14–26. doi: 10.1016/j.jclepro.2011.11.060."><div class="fw-card-icon"><svg viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg">
+  <line x1="14" y1="4" x2="14" y2="40" stroke="#2563EB" stroke-width="2.5"/>
+  <line x1="42" y1="4" x2="42" y2="40" stroke="#2563EB" stroke-width="2.5"/>
+  <line x1="14" y1="10" x2="42" y2="10" stroke="#2563EB" stroke-width="3"/>
+  <line x1="14" y1="21" x2="42" y2="21" stroke="rgba(37,99,235,0.7)" stroke-width="2.5"/>
+  <line x1="14" y1="31" x2="42" y2="31" stroke="rgba(37,99,235,0.45)" stroke-width="2"/>
+  <line x1="14" y1="40" x2="42" y2="40" stroke="rgba(37,99,235,0.25)" stroke-width="1.5"/>
+  <text x="46" y="13" font-size="5" fill="#2563EB" font-weight="700">4</text>
+  <text x="46" y="24" font-size="5" fill="rgba(37,99,235,0.7)">3</text>
+  <text x="46" y="34" font-size="5" fill="rgba(37,99,235,0.5)">2</text>
+  <text x="46" y="43" font-size="5" fill="rgba(37,99,235,0.35)">1</text>
+</svg></div><div class="fw-card-body"><div class="fw-card-name">Sustainability Maturity Ladder</div><div class="fw-card-desc">Ad hoc → Compliant → Proactive → Transformative — four adoption stages</div></div><div class="fw-card-foot"><span class="fw-sl-badge" style="background:rgba(37,99,235,0.12);color:#2563EB;">Slibrary 3</span><span class="fw-arrow">&#8594;</span></div></div><div class="fw-card" style="border-top-color:#2563EB;" data-color="#2563EB" data-rgb="37,99,235" data-sl="3" data-unit="MLUXR302 · Unit 1" data-setname="Strategic Response" data-name="Value Creation Chain" data-itten="Itten: Ultramarine Blue — Foundation, trust" data-lead="A systematic analysis of where, in the journey from raw material to customer to disposal, sustainability investment creates or destroys commercial value." data-sub="Upstream sourcing → design → manufacturing → retail → post-sale: mapping sustainability to margin" data-b1="Sourcing → sustainable material sourcing creates input cost stability, reduces regulatory risk and enables premium positioning; but requires supplier investment" data-b2="Design → circular and regenerative design is the highest-leverage intervention: decisions made at design lock in 80% of a product&#39;s lifetime environmental impact" data-b3="Manufacturing → energy efficiency and waste reduction simultaneously reduce costs and emissions; waterless dyeing reduces both input cost and chemical risk" data-b4="Post-sale → take-back programmes, repair services and resale create new revenue streams and deepen brand loyalty among sustainability-motivated consumers" data-ref="Porter, M.E. (1985) <em>Competitive Advantage: Creating and Sustaining Superior Performance</em>. New York: Free Press."><div class="fw-card-icon"><svg viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="14" width="8" height="16" rx="2" fill="rgba(37,99,235,0.2)" stroke="#2563EB" stroke-width="1"/>
+  <polygon points="12,22 14,19 14,25" fill="#2563EB"/><rect x="14" y="14" width="8" height="16" rx="2" fill="rgba(37,99,235,0.35)" stroke="#2563EB" stroke-width="1"/>
+  <polygon points="22,22 24,19 24,25" fill="#2563EB"/><rect x="24" y="14" width="8" height="16" rx="2" fill="rgba(37,99,235,0.5)" stroke="#2563EB" stroke-width="1"/>
+  <polygon points="32,22 34,19 34,25" fill="#2563EB"/><rect x="34" y="14" width="8" height="16" rx="2" fill="rgba(37,99,235,0.6499999999999999)" stroke="#2563EB" stroke-width="1"/>
+  <polygon points="42,22 44,19 44,25" fill="#2563EB"/><rect x="44" y="14" width="8" height="16" rx="2" fill="#2563EB" stroke="#2563EB" stroke-width="1"/>
   
-    <div class="set-section">
-      <div class="set-header">
-        <h2>
-          <span style="background:#1A237E;color:#fff;width:28px;height:28px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;">1</span>
-          Set 1 — Core Sustainability Theory
-        </h2>
-        <span class="set-count">5 frameworks</span>
-      </div>
-      <div class="framework-grid">
-      <div class="fw-card" style="border-top-color:#1A237E">
-        <div class="fw-thumb" style="background:#1A237E;color:#1A237E">TBL</div>
-        <div class="fw-badge" style="background:rgba(26,35,126,0.15);color:#1A237E">Slibrary 1</div>
-        <div class="fw-name">Triple Bottom Line</div>
-        <div class="fw-desc">People, Planet, Profit — Elkington's 1994 accountability framework</div>
-      </div>
-      <div class="fw-card" style="border-top-color:#1A237E">
-        <div class="fw-thumb" style="background:#1A237E;color:#1A237E">DE</div>
-        <div class="fw-badge" style="background:rgba(26,35,126,0.15);color:#1A237E">Slibrary 1</div>
-        <div class="fw-name">Doughnut Economics</div>
-        <div class="fw-desc">Social foundation + planetary ceiling — Raworth's safe operating space</div>
-      </div>
-      <div class="fw-card" style="border-top-color:#1A237E">
-        <div class="fw-thumb" style="background:#1A237E;color:#1A237E">US1</div>
-        <div class="fw-badge" style="background:rgba(26,35,126,0.15);color:#1A237E">Slibrary 1</div>
-        <div class="fw-name">UN SDGs 17 Goals</div>
-        <div class="fw-desc">2030 global development agenda across economic, social and environmental pillars</div>
-      </div>
-      <div class="fw-card" style="border-top-color:#1A237E">
-        <div class="fw-thumb" style="background:#1A237E;color:#1A237E">BD</div>
-        <div class="fw-badge" style="background:rgba(26,35,126,0.15);color:#1A237E">Slibrary 1</div>
-        <div class="fw-name">Brundtland Definition</div>
-        <div class="fw-desc">Meeting present needs without compromising future generations' ability to meet theirs</div>
-      </div>
-      <div class="fw-card" style="border-top-color:#1A237E">
-        <div class="fw-thumb" style="background:#1A237E;color:#1A237E">SPP</div>
-        <div class="fw-badge" style="background:rgba(26,35,126,0.15);color:#1A237E">Slibrary 1</div>
-        <div class="fw-name">Sustainability Pillars Pyramid</div>
-        <div class="fw-desc">Environmental → Social → Economic — nested dependency hierarchy</div>
-      </div></div>
-    </div>
-    <div class="set-section">
-      <div class="set-header">
-        <h2>
-          <span style="background:#1A237E;color:#fff;width:28px;height:28px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;">2</span>
-          Set 2 — Fashion Industry Context
-        </h2>
-        <span class="set-count">5 frameworks</span>
-      </div>
-      <div class="framework-grid">
-      <div class="fw-card" style="border-top-color:#1A237E">
-        <div class="fw-thumb" style="background:#1A237E;color:#1A237E">FFT</div>
-        <div class="fw-badge" style="background:rgba(26,35,126,0.15);color:#1A237E">Slibrary 2</div>
-        <div class="fw-name">Fashion Footprint Triangle</div>
-        <div class="fw-desc">Carbon, water and waste hotspots across the apparel value chain</div>
-      </div>
-      <div class="fw-card" style="border-top-color:#1A237E">
-        <div class="fw-thumb" style="background:#1A237E;color:#1A237E">LvC</div>
-        <div class="fw-badge" style="background:rgba(26,35,126,0.15);color:#1A237E">Slibrary 2</div>
-        <div class="fw-name">Linear vs. Circular Economy</div>
-        <div class="fw-desc">Take-make-waste model contrasted with the circular closed-loop alternative</div>
-      </div>
-      <div class="fw-card" style="border-top-color:#1A237E">
-        <div class="fw-thumb" style="background:#1A237E;color:#1A237E">GS</div>
-        <div class="fw-badge" style="background:rgba(26,35,126,0.15);color:#1A237E">Slibrary 2</div>
-        <div class="fw-name">Greenwashing Spectrum</div>
-        <div class="fw-desc">Seven sins of greenwashing: from hidden trade-offs to outright falsehoods</div>
-      </div>
-      <div class="fw-card" style="border-top-color:#1A237E">
-        <div class="fw-thumb" style="background:#1A237E;color:#1A237E">EF</div>
-        <div class="fw-badge" style="background:rgba(26,35,126,0.15);color:#1A237E">Slibrary 2</div>
-        <div class="fw-name">ESG Framework</div>
-        <div class="fw-desc">Environmental, Social and Governance dimensions for investor-grade reporting</div>
-      </div>
-      <div class="fw-card" style="border-top-color:#1A237E">
-        <div class="fw-thumb" style="background:#1A237E;color:#1A237E">I1P</div>
-        <div class="fw-badge" style="background:rgba(26,35,126,0.15);color:#1A237E">Slibrary 2</div>
-        <div class="fw-name">IPCC 1.5°C Pathway</div>
-        <div class="fw-desc">Science-based emission reduction curve that fashion must align to by 2030</div>
-      </div></div>
-    </div>
-    <div class="set-section">
-      <div class="set-header">
-        <h2>
-          <span style="background:#1A237E;color:#fff;width:28px;height:28px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;">3</span>
-          Set 3 — Strategic Response
-        </h2>
-        <span class="set-count">5 frameworks</span>
-      </div>
-      <div class="framework-grid">
-      <div class="fw-card" style="border-top-color:#1A237E">
-        <div class="fw-thumb" style="background:#1A237E;color:#1A237E">MM</div>
-        <div class="fw-badge" style="background:rgba(26,35,126,0.15);color:#1A237E">Slibrary 3</div>
-        <div class="fw-name">Materiality Matrix</div>
-        <div class="fw-desc">Two-axis map of issue significance to stakeholders vs. business impact</div>
-      </div>
-      <div class="fw-card" style="border-top-color:#1A237E">
-        <div class="fw-thumb" style="background:#1A237E;color:#1A237E">SM</div>
-        <div class="fw-badge" style="background:rgba(26,35,126,0.15);color:#1A237E">Slibrary 3</div>
-        <div class="fw-name">Stakeholder Map</div>
-        <div class="fw-desc">Investors, consumers, workers, NGOs and regulators in a power–interest grid</div>
-      </div>
-      <div class="fw-card" style="border-top-color:#1A237E">
-        <div class="fw-thumb" style="background:#1A237E;color:#1A237E">SML</div>
-        <div class="fw-badge" style="background:rgba(26,35,126,0.15);color:#1A237E">Slibrary 3</div>
-        <div class="fw-name">Sustainability Maturity Ladder</div>
-        <div class="fw-desc">Ad hoc → Compliant → Proactive → Transformative — four adoption stages</div>
-      </div>
-      <div class="fw-card" style="border-top-color:#1A237E">
-        <div class="fw-thumb" style="background:#1A237E;color:#1A237E">VCC</div>
-        <div class="fw-badge" style="background:rgba(26,35,126,0.15);color:#1A237E">Slibrary 3</div>
-        <div class="fw-name">Value Creation Chain</div>
-        <div class="fw-desc">Where sustainability investments generate — or erode — commercial value</div>
-      </div>
-      <div class="fw-card" style="border-top-color:#1A237E">
-        <div class="fw-thumb" style="background:#1A237E;color:#1A237E">PAS</div>
-        <div class="fw-badge" style="background:rgba(26,35,126,0.15);color:#1A237E">Slibrary 3</div>
-        <div class="fw-name">Paris Agreement SBTi</div>
-        <div class="fw-desc">Science-Based Targets methodology for aligning corporate strategy to 1.5°C</div>
-      </div></div>
-    </div>
-  <div style="text-align:center;margin:24px 0 48px;">
-    <p style="font-size:12px;color:var(--muted);">
-      <strong>MLUXR302</strong> · Sustainable Value Creation in Fashion &amp; Luxury · © 2026 Dr. Hildegard Haas<br/>
-      Applying JD Meier's <em>Thumbnail Thinking</em> (2025) · Unit 1: Introduction to Sustainability in Fashion & Luxury
-    </p>
-  </div>
-  </div>
-</main>
+  <text x="28" y="38" text-anchor="middle" font-size="4" fill="#2563EB">Value Chain</text>
+  <text x="28" y="44" text-anchor="middle" font-size="3.5" fill="rgba(37,99,235,0.6)">Porter 1985</text>
+</svg></div><div class="fw-card-body"><div class="fw-card-name">Value Creation Chain</div><div class="fw-card-desc">Where sustainability investments generate — or erode — commercial value</div></div><div class="fw-card-foot"><span class="fw-sl-badge" style="background:rgba(37,99,235,0.12);color:#2563EB;">Slibrary 3</span><span class="fw-arrow">&#8594;</span></div></div><div class="fw-card" style="border-top-color:#2563EB;" data-color="#2563EB" data-rgb="37,99,235" data-sl="3" data-unit="MLUXR302 · Unit 1" data-setname="Strategic Response" data-name="Paris Agreement SBTi" data-itten="Itten: Ultramarine Blue — Foundation, trust" data-lead="A company-level translation of the Paris Agreement into credible, independently validated targets that align corporate decarbonisation to the 1.5°C pathway — science made actionable." data-sub="Commit → Develop → Submit → Validate: the four-step pathway to credible climate targets" data-b1="Commitment → sign the SBTi commitment letter; publicly announce intention to set science-based targets within 24 months of commitment" data-b2="Baseline and pathway → calculate Scope 1, 2 and 3 emissions; select an approved decarbonisation pathway aligned to 1.5°C or the well-below 2°C scenario" data-b3="Target setting → set specific, time-bound reduction targets across all three scopes; for fashion, Scope 3 upstream (raw materials) must be included" data-b4="Validation and disclosure → targets reviewed by SBTi technical experts; annual progress reported publicly; 2022 Net-Zero Standard requires 90%+ reduction before 2050" data-ref="Science Based Targets initiative (2021) <em>Corporate Manual: Foundations of Science-Based Target Setting</em>. San Francisco: SBTi."><div class="fw-card-icon"><svg viewBox="0 0 56 44" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="28" cy="20" r="17" fill="none" stroke="rgba(37,99,235,0.2)" stroke-width="2"/>
+  <circle cx="28" cy="20" r="11" fill="none" stroke="rgba(37,99,235,0.4)" stroke-width="2"/>
+  <circle cx="28" cy="20" r="5" fill="#2563EB" opacity="0.8"/>
+  <line x1="28" y1="3" x2="28" y2="8" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="28" y="22" text-anchor="middle" font-size="4" fill="white" font-weight="700">SBTi</text>
+  <text x="28" y="42" text-anchor="middle" font-size="4.5" fill="#2563EB" font-weight="700">1.5°C ALIGNED</text>
+</svg></div><div class="fw-card-body"><div class="fw-card-name">Paris Agreement SBTi</div><div class="fw-card-desc">Science-Based Targets methodology for aligning corporate strategy to 1.5°C</div></div><div class="fw-card-foot"><span class="fw-sl-badge" style="background:rgba(37,99,235,0.12);color:#2563EB;">Slibrary 3</span><span class="fw-arrow">&#8594;</span></div></div></div></div><p style="text-align:center;font-size:11px;color:var(--muted);margin-bottom:48px;"><strong>MLUXR302</strong> &middot; &copy; 2026 Dr. Hildegard Haas &middot; EU Business School</p>
+</div></main>
 <footer class="site-footer">
   <div class="container">
-    <strong>MLUXR302</strong> · Sustainable Value Creation in Fashion &amp; Luxury · © 2026 Dr. Hildegard Haas<br/>
-    Applying JD Meier's <strong>Thumbnail Thinking</strong> (2025) · Johannes Itten's <strong>Colour Theory</strong> (1961) · EU Business School
+    <strong>&copy; Dr. Hildegard Haas</strong> &middot; MLUXR302 Sustainable Value Creation in Fashion &amp; Luxury &middot; EU Business School<br/>
+    Johannes Itten&rsquo;s Colour Theory (1961) &middot; JD Meier&rsquo;s Thumbnail Thinking (2025) &middot; Harvard referencing &middot; All rights reserved
   </div>
 </footer>
+
+<div id="modal-overlay">
+  <div id="modal-box">
+    <div id="modal-color-bar"></div>
+    <div id="modal-inner">
+      <div id="modal-header">
+        <div id="modal-header-left">
+          <div id="modal-label-row">
+            <span id="m-slibrary-header"></span>
+            <span id="m-unit-badge"></span>
+          </div>
+          <h2 id="m-title"></h2>
+          <div id="m-itten-line"></div>
+        </div>
+        <button id="modal-close" aria-label="Close">&#x2715;</button>
+      </div>
+      <blockquote id="modal-lead"><p id="m-lead-text"></p></blockquote>
+      <p id="m-sub-text"></p>
+      <div id="modal-bullets">
+        <div class="m-bullet-item"><span class="m-dot"></span><span class="m-bullet-text" id="m-b1"></span></div>
+        <hr class="m-divider"/>
+        <div class="m-bullet-item"><span class="m-dot"></span><span class="m-bullet-text" id="m-b2"></span></div>
+        <hr class="m-divider"/>
+        <div class="m-bullet-item"><span class="m-dot"></span><span class="m-bullet-text" id="m-b3"></span></div>
+        <hr class="m-divider"/>
+        <div class="m-bullet-item"><span class="m-dot"></span><span class="m-bullet-text" id="m-b4"></span></div>
+      </div>
+      <div id="modal-reference">
+        <div id="modal-ref-label">REFERENCE</div>
+        <p id="m-ref-text"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
-  // Accordion toggle for index
-  document.querySelectorAll('.unit-accordion-header').forEach(h => {
-    h.addEventListener('click', () => {
-      h.classList.toggle('open');
-      h.nextElementSibling.classList.toggle('open');
-    });
+(function(){
+  var ov=document.getElementById('modal-overlay');
+  var bx=document.getElementById('modal-box');
+  function open(card){
+    var c=card.dataset.color, rgb=card.dataset.rgb;
+    document.getElementById('modal-color-bar').style.background=c;
+    var lead=document.getElementById('modal-lead');
+    lead.style.borderLeftColor=c;
+    lead.style.background='rgba('+rgb+',0.05)';
+    document.getElementById('m-lead-text').style.color=c;
+    document.querySelectorAll('.m-dot').forEach(function(d){d.style.background=c;});
+    var ref=document.getElementById('modal-reference');
+    ref.style.borderLeftColor=c;
+    ref.style.background='rgba('+rgb+',0.07)';
+    document.getElementById('modal-ref-label').style.color=c;
+    document.getElementById('m-slibrary-header').textContent='SLIBRARY '+card.dataset.sl+' — '+card.dataset.setname;
+    document.getElementById('m-unit-badge').textContent=card.dataset.unit;
+    document.getElementById('m-title').textContent=card.dataset.name;
+    document.getElementById('m-itten-line').textContent=card.dataset.itten;
+    document.getElementById('m-lead-text').textContent=card.dataset.lead;
+    document.getElementById('m-sub-text').textContent=card.dataset.sub;
+    document.getElementById('m-b1').textContent=card.dataset.b1;
+    document.getElementById('m-b2').textContent=card.dataset.b2;
+    document.getElementById('m-b3').textContent=card.dataset.b3;
+    document.getElementById('m-b4').textContent=card.dataset.b4;
+    document.getElementById('m-ref-text').innerHTML=card.dataset.ref;
+    ov.classList.add('active');
+    document.body.style.overflow='hidden';
+    bx.scrollTop=0;
+  }
+  function close(){ov.classList.remove('active');document.body.style.overflow='';}
+  document.querySelectorAll('.fw-card').forEach(function(c){c.addEventListener('click',function(){open(c);});});
+  document.getElementById('modal-close').addEventListener('click',close);
+  ov.addEventListener('click',function(e){if(e.target===ov)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
+<script>
+document.querySelectorAll('.acc-hdr').forEach(function(h){
+  h.addEventListener('click',function(){
+    h.classList.toggle('open');
+    h.nextElementSibling.classList.toggle('open');
   });
+});
 </script>
 </body>
 </html>
